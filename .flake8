@@ -1,4 +1,8 @@
 [flake8]
-max-line-length = 120
+# 設定單行最大長度為 120 個字符
+max-line-length = 120 
+# 排除檢查的目錄 (GitHub Actions 中通常不需要設定)
 exclude = .git,__pycache__,docs,venv
-ignore = E501 # 忽略行長度檢查，避免報錯太多
+# 忽略特定的錯誤碼，例如 E501 是行太長，W503 是運算符號前的換行
+# 這裡我們只忽略 E501，讓其他錯誤都可以被檢查到
+ignore = E501
