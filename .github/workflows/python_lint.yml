@@ -21,12 +21,15 @@ jobs: # 這是要執行的工作清單
       with:
         python-version: '3.x' # 使用最新的 Python 3 版本
 
-    - name: Install dependencies # 步驟 3: 安裝專案需要的套件 (包括 Flake8)
+    - name: Install dependencies and Flake8
       run: |
-        # 這裡我們安裝 Flake8
         pip install flake8
-        # 如果你的 requirements.txt 裡有其他依賴，也要裝
-        pip install -r requirements.txt
+        # 使用 if 語句檢查 requirements.txt 是否存在，以防萬一
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        else
+          echo "requirements.txt not found. Continuing with only Flake8."
+        fi
 
     - name: Run Flake8 check # 步驟 4: 運行 Flake8 掃描 (這是最重要的檢查)
       run: |
