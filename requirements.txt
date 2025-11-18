@@ -1,4 +1,10 @@
 # requirements.txt
-# 選擇舊的、已知有漏洞的版本，讓 Dependabot 偵測到
+
+# 1. requests (舊版本可能有 CVE)
 requests==2.20.0
+
+# 2. django (舊版本可能有 CVE)
 django==2.2.0
+
+# 3. urllib3 (舊版本可能有 CVE)
+urllib3==1.25.10
