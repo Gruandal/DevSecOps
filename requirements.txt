@@ -1,2 +1,4 @@
-flask==2.3.0
-requests==2.27.0 # 較舊的版本，可能存在漏洞
+# requirements.txt
+# 選擇舊的、已知有漏洞的版本，讓 Dependabot 偵測到
+requests==2.20.0
+django==2.2.0
