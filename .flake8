@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 120
+exclude = .git,__pycache__,docs,venv
+ignore = E501 # 忽略行長度檢查，避免報錯太多
